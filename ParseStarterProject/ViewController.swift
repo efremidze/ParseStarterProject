@@ -1,11 +1,12 @@
 //
 //  ViewController.swift
+//  ParseStarterProject
 //
-//  Copyright 2011-present Parse Inc. All rights reserved.
+//  Created by Lasha Efremidze on 5/18/15.
+//  Copyright (c) 2015 Lasha Efremidze. All rights reserved.
 //
 
 import UIKit
-import Parse
 
 class ViewController: UIViewController {
 
@@ -18,5 +19,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
 }
 
