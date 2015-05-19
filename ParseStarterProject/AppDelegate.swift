@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("PEcwDlXlWKYTeK4usqczkXozRjhSZbpWcUVMUYHT", clientKey: "UWcQi7Yxzhea1WUYRCjD8u2aDBaSVesASHF2nfc2")
         
         // Pin objects to datastore
-//        ParseManager.pinObjectsWithValues("Hello world", nil, 1)
+        ParseManager.pinObjectsWithValues("Hello world", 22)
         
         // Retrieve objects from datastore
         if let objects = ParseManager.retrieveObjects() {

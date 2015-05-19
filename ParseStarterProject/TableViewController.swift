@@ -14,11 +14,17 @@ class TableViewController: PFQueryTableViewController {
         super.init(style: style, className: className)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init!(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         
         self.parseClassName = ParseObject.parseClassName()
         self.textKey = "value"
+    }
+    
+    override func queryForTable() -> PFQuery {
+        let query = ParseObject.query()
+        query!.fromLocalDatastore()
+        return query!
     }
     
 }

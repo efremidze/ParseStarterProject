@@ -10,10 +10,9 @@ import Foundation
 
 public class ParseManager {
     
-    class func pinObjectsWithValues(values: AnyObject?...) {
+    class func pinObjectsWithValues(values: AnyObject...) {
         for value in values {
-            let object = ParseObject()
-            object.value = value
+            let object = ParseObject.createIfNeeded(value)
             object.pin()
         }
     }
@@ -28,7 +27,7 @@ public class ParseManager {
 
 class ParseObject: PFObject, PFSubclassing {
     
-    @NSManaged var value: AnyObject?
+    @NSManaged var value: AnyObject
     
     override class func initialize() {
         var token: dispatch_once_t = 0
@@ -39,6 +38,22 @@ class ParseObject: PFObject, PFSubclassing {
     
     static func parseClassName() -> String {
         return NSStringFromClass(self).componentsSeparatedByString(".").last!
+    }
+    
+    class func createIfNeeded(value: AnyObject) -> ParseObject {
+        var object: ParseObject? = ParseObject.fetchObject(value)
+        if object == nil {
+            object = ParseObject()
+            object!.value = value
+        }
+        return object!
+    }
+    
+    class func fetchObject(value: AnyObject) -> ParseObject? {
+        let query = ParseObject.query()
+        query!.fromLocalDatastore()
+        query!.whereKey("value", equalTo:value)
+        return query!.getFirstObject() as? ParseObject
     }
     
 }
