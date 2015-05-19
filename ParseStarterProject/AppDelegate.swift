@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.setApplicationId("PEcwDlXlWKYTeK4usqczkXozRjhSZbpWcUVMUYHT", clientKey: "UWcQi7Yxzhea1WUYRCjD8u2aDBaSVesASHF2nfc2")
         
-        ParseManager.pinObjectsWithValues("Hello world", nil, 1)
+//        ParseManager.pinObjectsWithValues("Hello world", nil, 1)
         
         if let objects = ParseManager.retrieveObjects() {
             println("ParseLibrary contains \(objects)")
