@@ -10,16 +10,15 @@ import Foundation
 
 class TableViewController: PFQueryTableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.textKey = "value"
+    override init(style: UITableViewStyle, className: String?) {
+        super.init(style: style, className: className)
     }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-    override func queryForTable() -> PFQuery {
-        let query = ParseObject.query()
-        query!.fromLocalDatastore()
-        return query!
+        self.parseClassName = ParseObject.parseClassName()
+        self.textKey = "value"
     }
     
 }

@@ -38,7 +38,7 @@ class ParseObject: PFObject, PFSubclassing {
     }
     
     static func parseClassName() -> String {
-        return NSStringFromClass(self)
+        return NSStringFromClass(self).componentsSeparatedByString(".").last!
     }
     
 }
