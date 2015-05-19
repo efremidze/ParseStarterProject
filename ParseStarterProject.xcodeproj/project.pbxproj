@@ -153,6 +153,7 @@
 				8B4BCB421B0AC738000F587A /* Frameworks */,
 				8B4BCB431B0AC738000F587A /* Resources */,
 				296F4F7CD46BE4C542BCB6B0 /* Copy Pods Resources */,
+				8BAC1E7C1B0BBF6800CE2B48 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +254,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8BAC1E7C1B0BBF6800CE2B48 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /usr/local/bin/swiftlint;
 		};
 		91CF7AE6F9FA3DC8BF413DCC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
